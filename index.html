@@ -13,83 +13,32 @@
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
         header {
             background-color: #0073e6;
             color: white;
             padding: 1rem 0;
-            width: 100%;
-            text-align: center;
         }
         .video-container {
-            width: 100%;
-            max-width: 30cm; /* Фіксована ширина */
-            height: 15cm; /* Фіксована висота */
+            margin: 2rem auto;
+            width: 90%;
+            max-width: 900px;
             background: white;
             padding: 1rem;
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
         }
-        .video-container video {
+        video {
             width: 100%;
-            height: 100%;
+            height: auto;
             border-radius: 10px;
-            cursor: pointer;
-        }
-        .video-container.fullscreen video {
-            width: 100vw;
-            height: 100vh;
         }
         footer {
+            padding: 1rem 0;
             background-color: #0073e6;
             color: white;
-            padding: 1rem 0;
-            width: 100%;
-            text-align: center;
-            margin-top: auto;
-        }
-        /* Адаптивні стилі для мобільних пристроїв */
-        @media (max-width: 600px) {
-            .video-container {
-                max-width: 100%; /* Вікно займає всю ширину на малих екранах */
-                height: auto; /* Висота автоматична */
-                padding: 0.5rem; /* Менше відступів на мобільних пристроях */
-            }
-            footer {
-                padding: 0.5rem 0; /* Менший футер на мобільних */
-            }
         }
     </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-            const videoContainer = document.querySelector('.video-container');
-            const videoElement = document.querySelector('video');
-            
-            videoElement.addEventListener('click', () => {
-                if (!document.fullscreenElement) {
-                    // Перевірка, чи підтримує браузер мобільного пристрою повноекранний режим
-                    if (videoContainer.requestFullscreen) {
-                        videoContainer.requestFullscreen();
-                    } else if (videoContainer.mozRequestFullScreen) { // Firefox
-                        videoContainer.mozRequestFullScreen();
-                    } else if (videoContainer.webkitRequestFullscreen) { // Chrome, Safari
-                        videoContainer.webkitRequestFullscreen();
-                    } else if (videoContainer.msRequestFullscreen) { // IE/Edge
-                        videoContainer.msRequestFullscreen();
-                    }
-                } else {
-                    document.exitFullscreen();
-                }
-            });
-        });
-    </script>
 </head>
 <body>
     <header>
@@ -102,7 +51,6 @@
             class="video-js"
             controls
             autoplay
-            preload="auto"
             data-setup='{}'>
             <source src="https://vs3502.vcdn.biz/5098c0167902875f951d23ac692b39d9_megogo/live/hls/b/700_2490_4000/u_sid/0/o/207804781/rsid/e96e3801-8317-4d3a-8b7c-beb07e4eb034/u_uid/220755081/u_vod/4/u_device/cms_html5/u_devicekey/_site/lip/176.103.52.208*asn/u_srvc/66105/te/1737312901/u_did/web_GdFxo8t1bUhpwtHdFddfXJtefwz0W9r9/u_ccb/sport/type.live/chunklist-sid5519904120397418465-b4000000.m3u8" type="application/x-mpegURL">
             Your browser does not support the video tag.
