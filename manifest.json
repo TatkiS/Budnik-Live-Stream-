@@ -1,0 +1,23 @@
+{
+  "name": "Хвиля Перемоги",
+  "short_name": "Хвиля",
+  "description": "Радіо з сучасною українською музикою, що об'єднує жанри та культури!",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0057B8",
+  "theme_color": "#0057B8",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "orientation": "portrait",
+  "lang": "uk-UA"
+}

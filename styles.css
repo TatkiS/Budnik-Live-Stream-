@@ -1,0 +1,243 @@
+/* --- Стилі з index.html винесені --- */
+
+:root {
+  --primary-blue: #0057B8;
+  --primary-yellow: #FFD700;
+  --text-light: #ffffff;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
+  background-color: #000;
+  color: var(--text-light);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background: linear-gradient(135deg, var(--primary-blue), #003875);
+  padding: var(--spacing-lg);
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-md);
+  animation: colorChange 10s infinite;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+@keyframes colorChange {
+  0% { color: #ff2d55; }
+  33% { color: var(--text-light); }
+  66% { color: #4cd964; }
+  100% { color: #ff2d55; }
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  padding: 0;
+  list-style: none;
+}
+
+nav ul li a {
+  color: var(--text-light);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+  background-color: rgba(255,255,255,0.1);
+}
+
+main {
+  flex: 1;
+  padding: var(--spacing-lg);
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+section {
+  margin-bottom: var(--spacing-lg);
+}
+
+h2 {
+  color: var(--primary-yellow);
+  margin-bottom: var(--spacing-md);
+}
+
+#visualizer-container {
+  position: relative;
+  margin: var(--spacing-lg) auto;
+  width: 100%;
+  max-width: 800px;
+  height: 300px;
+  background-color: rgba(0,0,0,0.8);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+#visualizer {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.player-controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--spacing-md);
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+#playButton {
+  width: 60px;
+  height: 40px;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(90deg, var(--primary-blue) 50%, var(--primary-yellow) 50%);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+#playButton:hover {
+  transform: scale(1.05);
+}
+
+#volumeControl {
+  flex: 1;
+  max-width: 200px;
+  -webkit-appearance: none;
+  height: 6px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 3px;
+  outline: none;
+}
+
+#volumeControl::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  background: var(--primary-yellow);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.spotify-section {
+  margin: var(--spacing-lg) auto;
+  width: 100%;
+  max-width: 800px;
+}
+
+.spotify-container {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: var(--spacing-md);
+  background-color: rgba(0,0,0,0.8);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.player-notification {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: var(--primary-yellow);
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  z-index: 10;
+  display: none;
+}
+
+.buymeacoffee {
+  display: inline-block;
+  padding: 12px 24px;
+  background: var(--primary-yellow);
+  color: #000;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin: var(--spacing-md) 0;
+}
+
+.buymeacoffee:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.scrolling-banner {
+  background: linear-gradient(90deg, var(--primary-blue), var(--primary-yellow));
+  padding: var(--spacing-sm);
+  overflow: hidden;
+  position: relative;
+}
+
+.scrolling-banner::before {
+  content: 'СЛАВА УКРАЇНІ! ГЕРОЯМ СЛАВА! ВСЕ БУДЕ УКРАЇНА! УКРАЇНА ПОНАД УСЕ! НА РАДІО ХВИЛЯ ПЕРЕМОГИ НЕМАЄ РЕКЛАМИ! ПІДТРИМАТИ НАС МОЖНА НАЖАВ НА КНОПКУ *НА КАВУ* ДЯКУЄМО!';
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll-banner 30s linear infinite;
+}
+
+@keyframes scroll-banner {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+footer {
+  background: var(--primary-yellow);
+  color: #000;
+  text-align: center;
+  padding: var(--spacing-lg);
+  margin-top: auto;
+}
+
+/* Адаптив */
+@media screen and (max-width: 768px) {
+  header h1 { font-size: 2rem; }
+  main { padding: var(--spacing-md); }
+  #visualizer-container { height: 200px; }
+  .player-controls { padding: var(--spacing-sm); }
+  #playButton { width: 50px; height: 35px; }
+  .scrolling-banner { font-size: 14px; }
+  .buymeacoffee { width: 100%; padding: 10px 20px; }
+}
+
+@media screen and (max-width: 480px) {
+  header h1 { font-size: 1.75rem; }
+  nav ul { flex-direction: column; gap: var(--spacing-sm); }
+  #visualizer-container { height: 150px; }
+}
